@@ -10,9 +10,32 @@ identical blocks stored once, a benchmark harness, and a feature-gated
 research crate ([docs/RESEARCH.md](docs/RESEARCH.md)). Output is identical
 for any thread count. Tested in CI on Linux, Windows, and macOS.
 
-On a 570 MiB mixed-media corpus ACX's archive is 31% smaller than zip's
-and created 2× faster; see [docs/BENCHMARKS.md](docs/BENCHMARKS.md) for
-the full comparison, including where plain tar.zst is faster.
+## Benchmark results
+
+570 MiB reproducible mixed-media corpus (logs, raw screen-capture frames,
+incompressible photos/videos, a backup copy of half the photos, 2,000
+small files). AMD Ryzen 5 7600X, Windows 11, NVMe, warm cache; median of
+3 runs after a warm-up, and every extracted copy verified byte for byte.
+
+| Tool | Archive | Saved | Create | Extract |
+| --- | ---: | ---: | ---: | ---: |
+| **ACX balanced, 12 threads** (default) | **235.4 MiB** | **58.7%** | 3.95 s | 2.56 s |
+| ACX balanced, 1 thread | 235.4 MiB | 58.7% | 5.26 s | 2.77 s |
+| ACX fast, 12 threads | 238.9 MiB | 58.1% | 3.71 s | 2.55 s |
+| ACX maximum, 12 threads | 231.8 MiB | 59.3% | 26.57 s | 2.54 s |
+| zip (Deflate) | 341.4 MiB | 40.1% | 8.01 s | 1.03 s |
+| tar.gz (gzip -6) | 340.9 MiB | 40.1% | 7.99 s | 1.04 s |
+| tar.zst (zstd -3) | 341.7 MiB | 40.0% | **1.02 s** | 1.07 s |
+| tar.xz (xz -6) | 330.0 MiB | 42.1% | 143.08 s | 1.69 s |
+
+- ACX archives are about 31% smaller than zip and 29% smaller than xz,
+  mostly because duplicate files and repeated frames are stored once.
+- ACX creates 2× faster than zip/gzip. Plain tar.zst creates faster, and
+  every baseline extracts about 2.5× faster: ACX checks BLAKE3 for every
+  block and file and syncs each file before renaming it into place.
+
+Method, corpus details, a known memory issue with `--mode maximum`, and
+how to reproduce: [docs/BENCHMARKS.md](docs/BENCHMARKS.md).
 
 ```bash
 acx create photos/ video.mkv -o media.acx
