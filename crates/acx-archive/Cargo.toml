@@ -1,0 +1,24 @@
+[package]
+name = "acx-archive"
+description = "ACX scan, create, extract, verify, and dedup"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+acx-core.workspace = true
+acx-container.workspace = true
+acx-codecs.workspace = true
+blake3.workspace = true
+tempfile.workspace = true
+filetime.workspace = true
+walkdir.workspace = true
+rayon.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+walkdir.workspace = true
+
+[lints]
+workspace = true

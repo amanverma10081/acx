@@ -1,0 +1,17 @@
+[package]
+name = "acx-codecs"
+description = "ACX payload codecs (RAW, Zstandard)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+acx-core.workspace = true
+zstd.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

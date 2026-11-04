@@ -1,0 +1,24 @@
+[package]
+name = "acx-cli"
+description = "ACX command-line interface"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "acx"
+path = "src/main.rs"
+
+[dependencies]
+acx-core.workspace = true
+acx-archive.workspace = true
+clap.workspace = true
+ctrlc.workspace = true
+acx-bench.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,28 @@
+[package]
+name = "acx-bench"
+description = "ACX reproducible archive benchmarks"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+acx-core.workspace = true
+acx-archive.workspace = true
+acx-codecs.workspace = true
+blake3.workspace = true
+walkdir.workspace = true
+tempfile.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { workspace = true, features = [
+  "Win32_System_ProcessStatus",
+  "Win32_System_Threading",
+] }
+
+# Not `workspace = true`: the workspace forbids unsafe code outright, and this
+# crate needs one audited Windows FFI call (`peak_rss_bytes`).
+[lints.rust]
+unsafe_code = "deny"

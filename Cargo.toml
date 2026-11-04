@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/acx-core",
+  "crates/acx-container",
+  "crates/acx-codecs",
+  "crates/acx-archive",
+  "crates/acx-bench",
+  "apps/acx-cli",
+  # "crates/acx-research", added in TASK 8
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.85"
+
+# Add a dependency here only in the task that first uses it (PRD §5.2).
+[workspace.dependencies]
+acx-core = { path = "crates/acx-core" }
+acx-container = { path = "crates/acx-container" }
+acx-codecs = { path = "crates/acx-codecs" }
+acx-archive = { path = "crates/acx-archive" }
+acx-bench = { path = "crates/acx-bench" }
+tempfile = "3"
+filetime = "0.2"
+walkdir = "2.4"
+rayon = "1"
+ctrlc = "3.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+windows-sys = "0.61"
+thiserror = "2"
+crc32c = "0.6"
+blake3 = "1"
+zstd = "0.13"
+proptest = "1"
+clap = { version = "4", features = ["derive"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"

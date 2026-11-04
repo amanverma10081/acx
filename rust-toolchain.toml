@@ -1,0 +1,4 @@
+[toolchain]
+# Pinned so new clippy lints don't break `-D warnings` in CI unexpectedly.
+channel = "1.99.1"
+components = ["rustfmt", "clippy"]
