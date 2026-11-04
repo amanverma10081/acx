@@ -6,8 +6,8 @@ members = [
   "crates/acx-codecs",
   "crates/acx-archive",
   "crates/acx-bench",
+  "crates/acx-research",
   "apps/acx-cli",
-  # "crates/acx-research", added in TASK 8
 ]
 
 [workspace.package]

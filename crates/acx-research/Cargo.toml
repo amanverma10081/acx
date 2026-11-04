@@ -1,0 +1,22 @@
+[package]
+name = "acx-research"
+description = "ACX experimental reversible image and video transforms (not used by archives)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[features]
+# Everything is behind this flag so stable builds never include it (PRD §2.3).
+experimental = ["dep:blake3"]
+
+[dependencies]
+blake3 = { workspace = true, optional = true }
+
+[dev-dependencies]
+acx-codecs.workspace = true
+acx-core.workspace = true
+
+[lints]
+workspace = true

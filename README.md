@@ -4,10 +4,15 @@ A CPU-first, lossless media archiver in Rust. Archives restore original
 files byte-for-byte (`FileExact`). See [docs/PRD.md](docs/PRD.md) for
 requirements, architecture (§2), and the v1 binary format (§4).
 
-**Status:** TASK 7 done: files and directory trees, compressed and
-extracted in parallel with a bounded memory budget, identical blocks
-stored once, and a benchmark harness. Output is identical for any thread
-count.
+**Status:** all PRD tasks (0–8) done: files and directory trees,
+compressed and extracted in parallel with a bounded memory budget,
+identical blocks stored once, a benchmark harness, and a feature-gated
+research crate ([docs/RESEARCH.md](docs/RESEARCH.md)). Output is identical
+for any thread count. Tested in CI on Linux, Windows, and macOS.
+
+On a 570 MiB mixed-media corpus ACX's archive is 31% smaller than zip's
+and created 2× faster; see [docs/BENCHMARKS.md](docs/BENCHMARKS.md) for
+the full comparison, including where plain tar.zst is faster.
 
 ```bash
 acx create photos/ video.mkv -o media.acx
@@ -52,9 +57,11 @@ single-thread baseline. The exit code is 4 if any run fails verification.
 | `crates/acx-codecs`    | RAW and Zstandard block codecs                               |
 | `crates/acx-archive`   | Scan, dedup, schedule, create, extract, verify               |
 | `crates/acx-bench`     | Benchmark runs, statistics, JSON/CSV reports                 |
+| `crates/acx-research`  | Experimental reversible transforms (`--features experimental`) |
+| `benchmarks/`          | Corpus generator, comparison script, published reports       |
 | `apps/acx-cli`         | `acx` binary                                                 |
 
-`acx-research` is added in TASK 8. Dependencies flow `acx-cli →
+Dependencies flow `acx-cli →
 acx-bench → acx-archive → acx-container / acx-codecs → acx-core`.
 
 ## Build and check

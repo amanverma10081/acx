@@ -1,0 +1,348 @@
+{
+  "source_bytes": 597231799,
+  "files": 2161,
+  "runs": 3,
+  "baseline_tool": "bsdtar 3.8.9 - libarchive 3.8.9 zlib/1.2.13.1-motley liblzma/5.8.3 bz2lib/1.0.8 libzstd/1.5.7 cng/2.0 libb2/bundled",
+  "results": [
+    {
+      "tool": "ACX balanced, all threads",
+      "archive_bytes": 246835535,
+      "create_secs": 3.9519261,
+      "extract_secs": 2.5609709,
+      "verified": true,
+      "peak_rss_bytes": 315064320,
+      "acx_report": {
+        "acx_version": "0.1.0",
+        "environment": {
+          "os": "windows",
+          "arch": "x86_64",
+          "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+          "logical_cpus": 12,
+          "zstd_version": "1.5.7"
+        },
+        "settings": {
+          "threads": 12,
+          "effective_threads": 12,
+          "memory_bytes": 1073741824,
+          "block_size": 16777216,
+          "mode": "Balanced",
+          "codec": "Auto",
+          "dedup": "Blocks",
+          "verify_dedup": false,
+          "warmup": 1,
+          "runs": 3
+        },
+        "dataset": {
+          "id": "corpus",
+          "files": 2161,
+          "directories": 39,
+          "bytes": 597231799,
+          "manifest_blake3": "e488481737d91dce60088fa61dff76c43a5e9bcc875da1c23272aa726958c77e"
+        },
+        "runs": [
+          {
+            "create_secs": 3.8503464,
+            "extract_secs": 2.5609709,
+            "archive_bytes": 246835535,
+            "verified": true
+          },
+          {
+            "create_secs": 3.9519261,
+            "extract_secs": 2.5762354,
+            "archive_bytes": 246835535,
+            "verified": true
+          },
+          {
+            "create_secs": 3.9658939,
+            "extract_secs": 2.5370257,
+            "archive_bytes": 246835535,
+            "verified": true
+          }
+        ],
+        "summary": {
+          "create_secs": {
+            "median": 3.9519261,
+            "mad": 0.013967800000000086,
+            "min": 3.8503464,
+            "max": 3.9658939
+          },
+          "extract_secs": {
+            "median": 2.5609709,
+            "mad": 0.015264499999999792,
+            "min": 2.5370257,
+            "max": 2.5762354
+          },
+          "create_mib_s": 144.12329917996186,
+          "extract_mib_s": 222.40183504131184,
+          "archive_bytes": 246835535,
+          "ratio": 2.4195535663047867,
+          "saved_percent": 58.67006153836763,
+          "all_verified": true
+        },
+        "peak_rss_bytes": 315064320
+      }
+    },
+    {
+      "tool": "ACX balanced, 1 thread",
+      "archive_bytes": 246835535,
+      "create_secs": 5.2615001,
+      "extract_secs": 2.7718517,
+      "verified": true,
+      "peak_rss_bytes": 55963648,
+      "acx_report": {
+        "acx_version": "0.1.0",
+        "environment": {
+          "os": "windows",
+          "arch": "x86_64",
+          "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+          "logical_cpus": 12,
+          "zstd_version": "1.5.7"
+        },
+        "settings": {
+          "threads": 1,
+          "effective_threads": 1,
+          "memory_bytes": 1073741824,
+          "block_size": 16777216,
+          "mode": "Balanced",
+          "codec": "Auto",
+          "dedup": "Blocks",
+          "verify_dedup": false,
+          "warmup": 1,
+          "runs": 3
+        },
+        "dataset": {
+          "id": "corpus",
+          "files": 2161,
+          "directories": 39,
+          "bytes": 597231799,
+          "manifest_blake3": "e488481737d91dce60088fa61dff76c43a5e9bcc875da1c23272aa726958c77e"
+        },
+        "runs": [
+          {
+            "create_secs": 5.2615001,
+            "extract_secs": 2.6634732,
+            "archive_bytes": 246835535,
+            "verified": true
+          },
+          {
+            "create_secs": 5.6705756,
+            "extract_secs": 2.8086612,
+            "archive_bytes": 246835535,
+            "verified": true
+          },
+          {
+            "create_secs": 5.2117815,
+            "extract_secs": 2.7718517,
+            "archive_bytes": 246835535,
+            "verified": true
+          }
+        ],
+        "summary": {
+          "create_secs": {
+            "median": 5.2615001,
+            "mad": 0.04971860000000028,
+            "min": 5.2117815,
+            "max": 5.6705756
+          },
+          "extract_secs": {
+            "median": 2.7718517,
+            "mad": 0.03680949999999994,
+            "min": 2.6634732,
+            "max": 2.8086612
+          },
+          "create_mib_s": 108.25137637978946,
+          "extract_mib_s": 205.481638013823,
+          "archive_bytes": 246835535,
+          "ratio": 2.4195535663047867,
+          "saved_percent": 58.67006153836763,
+          "all_verified": true
+        },
+        "peak_rss_bytes": 55963648
+      }
+    },
+    {
+      "tool": "ACX fast, all threads",
+      "archive_bytes": 250504282,
+      "create_secs": 3.7117423,
+      "extract_secs": 2.552833,
+      "verified": true,
+      "peak_rss_bytes": 126951424,
+      "acx_report": {
+        "acx_version": "0.1.0",
+        "environment": {
+          "os": "windows",
+          "arch": "x86_64",
+          "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+          "logical_cpus": 12,
+          "zstd_version": "1.5.7"
+        },
+        "settings": {
+          "threads": 12,
+          "effective_threads": 12,
+          "memory_bytes": 1073741824,
+          "block_size": 16777216,
+          "mode": "Fast",
+          "codec": "Auto",
+          "dedup": "Blocks",
+          "verify_dedup": false,
+          "warmup": 1,
+          "runs": 3
+        },
+        "dataset": {
+          "id": "corpus",
+          "files": 2161,
+          "directories": 39,
+          "bytes": 597231799,
+          "manifest_blake3": "e488481737d91dce60088fa61dff76c43a5e9bcc875da1c23272aa726958c77e"
+        },
+        "runs": [
+          {
+            "create_secs": 3.7117423,
+            "extract_secs": 2.6281174,
+            "archive_bytes": 250504282,
+            "verified": true
+          },
+          {
+            "create_secs": 3.8284976,
+            "extract_secs": 2.5315296,
+            "archive_bytes": 250504282,
+            "verified": true
+          },
+          {
+            "create_secs": 3.3920006,
+            "extract_secs": 2.552833,
+            "archive_bytes": 250504282,
+            "verified": true
+          }
+        ],
+        "summary": {
+          "create_secs": {
+            "median": 3.7117423,
+            "mad": 0.1167552999999999,
+            "min": 3.3920006,
+            "max": 3.8284976
+          },
+          "extract_secs": {
+            "median": 2.552833,
+            "mad": 0.021303400000000305,
+            "min": 2.5315296,
+            "max": 2.6281174
+          },
+          "create_mib_s": 153.44939966532695,
+          "extract_mib_s": 223.11080577828628,
+          "archive_bytes": 250504282,
+          "ratio": 2.384118124575611,
+          "saved_percent": 58.05576956561216,
+          "all_verified": true
+        },
+        "peak_rss_bytes": 126951424
+      }
+    },
+    {
+      "tool": "ACX maximum, all threads",
+      "archive_bytes": 243031535,
+      "create_secs": 26.571784,
+      "extract_secs": 2.5398778,
+      "verified": true,
+      "peak_rss_bytes": 1200492544,
+      "acx_report": {
+        "acx_version": "0.1.0",
+        "environment": {
+          "os": "windows",
+          "arch": "x86_64",
+          "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+          "logical_cpus": 12,
+          "zstd_version": "1.5.7"
+        },
+        "settings": {
+          "threads": 12,
+          "effective_threads": 12,
+          "memory_bytes": 1073741824,
+          "block_size": 16777216,
+          "mode": "Maximum",
+          "codec": "Auto",
+          "dedup": "Blocks",
+          "verify_dedup": false,
+          "warmup": 1,
+          "runs": 3
+        },
+        "dataset": {
+          "id": "corpus",
+          "files": 2161,
+          "directories": 39,
+          "bytes": 597231799,
+          "manifest_blake3": "e488481737d91dce60088fa61dff76c43a5e9bcc875da1c23272aa726958c77e"
+        },
+        "runs": [
+          {
+            "create_secs": 26.571784,
+            "extract_secs": 2.5398778,
+            "archive_bytes": 243031535,
+            "verified": true
+          },
+          {
+            "create_secs": 26.9165551,
+            "extract_secs": 2.5067491,
+            "archive_bytes": 243031535,
+            "verified": true
+          },
+          {
+            "create_secs": 26.4950946,
+            "extract_secs": 2.5523641,
+            "archive_bytes": 243031535,
+            "verified": true
+          }
+        ],
+        "summary": {
+          "create_secs": {
+            "median": 26.571784,
+            "mad": 0.07668939999999935,
+            "min": 26.4950946,
+            "max": 26.9165551
+          },
+          "extract_secs": {
+            "median": 2.5398778,
+            "mad": 0.01248629999999995,
+            "min": 2.5067491,
+            "max": 2.5523641
+          },
+          "create_mib_s": 21.434941201065005,
+          "extract_mib_s": 224.24883104509982,
+          "archive_bytes": 243031535,
+          "ratio": 2.4574251197483488,
+          "saved_percent": 59.3070001619254,
+          "all_verified": true
+        },
+        "peak_rss_bytes": 1200492544
+      }
+    },
+    {
+      "tool": "zip (Deflate)",
+      "archive_bytes": 358015852,
+      "create_secs": 8.005166099988855,
+      "extract_secs": 1.0291523999767378,
+      "verified": true
+    },
+    {
+      "tool": "tar.gz (gzip -6)",
+      "archive_bytes": 357484645,
+      "create_secs": 7.993778600008227,
+      "extract_secs": 1.0405632000183687,
+      "verified": true
+    },
+    {
+      "tool": "tar.zst (zstd -3)",
+      "archive_bytes": 358249934,
+      "create_secs": 1.0195028000161983,
+      "extract_secs": 1.0735668999841437,
+      "verified": true
+    },
+    {
+      "tool": "tar.xz (xz -6)",
+      "archive_bytes": 346031424,
+      "create_secs": 143.08441010001116,
+      "extract_secs": 1.6903408999787644,
+      "verified": true
+    }
+  ]
+}

@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -21,3 +21,6 @@ jobs:
       - run: cargo clippy --workspace --all-targets -- -D warnings
       - run: cargo test --workspace
       - run: cargo test --workspace --release
+      # Research code is feature-gated out of the normal build; check it too.
+      - run: cargo clippy -p acx-research --features experimental --all-targets -- -D warnings
+      - run: cargo test -p acx-research --features experimental --release
